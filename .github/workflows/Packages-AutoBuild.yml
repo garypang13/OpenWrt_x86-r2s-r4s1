@@ -218,7 +218,7 @@ jobs:
              #cp -rf kiddin9.b/$ipk package/feeds/kiddin9/
              (make package/$ipk/compile -j$(($(nproc)+1)) || make package/$ipk/compile V=s 2>&1 | tee error_$ipk.log | grep -i "Error 2" || rm -rf error_$ipk.log) || true
             }
-          for ipk in $(ls kiddin9.b | grep -E "$fpkg"); do
+          for ipk in $(ls kiddin9 | grep -E "$fpkg"); do
             echo $ipk
             if [[ "$fpkg" && ! "$during" ]]; then
               comp
